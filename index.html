@@ -5,11 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@900&family=Raleway:wght@500;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Todo list</title>
 </head>
 
 <body>
-
+    <h1>todo list</h1>
+    <div class="date">
+        <label>Today:</label>
+        <input type="date" class="inputDate" disabled="disabled">
+        <input type="date" class="picker_date">
+        <button class="date_picker">sort tasks</button>
+    </div>
+    <div class="todo_block">
+        <div class="todo_input">
+            <input class="input " placeholder="Enter task " type="text ">
+            <button class="btn_save ">save</button>
+        </div>
+        <div class="todo_list ">
+        </div>
+    </div>
 </body>
+<script src="./script/main.js "></script>
 
 </html>
