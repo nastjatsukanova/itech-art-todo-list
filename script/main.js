@@ -4,7 +4,6 @@ const todoList = document.querySelector('.todo_list');
 const inputDate = document.querySelector('.inputDate');
 const datePick = document.querySelector('.picker_date');
 const datePicker = document.querySelector('.date_picker');
-const todoInputs = document.querySelectorAll('.item_text');
 
 inputDate.setAttribute('value', today());
 datePick.setAttribute('value', today());
@@ -36,6 +35,7 @@ addElement.addEventListener('click', () => {
         setToStorage();
         renderTodoList();
         inputValue.value = '';
+        datePick.value = nowDate;
     }
 })
 

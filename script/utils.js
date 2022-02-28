@@ -4,7 +4,7 @@ const today = () => {
     const currentMonth = '0' + (day.getMonth() + 1);
     const currentYear = day.getFullYear();
 
-    return currentYear + "-" + currentMonth + "-" + currentDay;
+    return `${currentYear}-${currentMonth}-${currentDay}`;
 }
 
 const setToStorage = () => localStorage.setItem('todos', JSON.stringify(todos));
@@ -23,10 +23,10 @@ const createTodoItem = (todo, i) => {
         `
 }
 
-const renderTodoList = (todosArr = todos) => {
+const renderTodoList = (renderTodos = todos) => {
     todoList.innerHTML = "";
-    if (todosArr.length > 0) {
-        todosArr.forEach((item, i) => {
+    if (renderTodos.length > 0) {
+        renderTodos.forEach((item, i) => {
             todoList.innerHTML += createTodoItem(item, i);
         });
         todoItems = document.querySelectorAll('.todo_item');
