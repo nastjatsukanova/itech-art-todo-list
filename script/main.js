@@ -2,11 +2,11 @@ const addElement = document.querySelector('.btn_save');
 const inputValue = document.querySelector('.input');
 const todoList = document.querySelector('.todo_list');
 const inputDate = document.querySelector('.inputDate');
-const datePick = document.querySelector('.picker_date');
+const dateForSort = document.querySelector('.dateForSort');
 const datePicker = document.querySelector('.date_picker');
 
-inputDate.setAttribute('value', today());
-datePick.setAttribute('value', today());
+inputDate.setAttribute('value', getCurrentDate());
+dateForSort.setAttribute('value', getCurrentDate());
 
 let todos;
 
@@ -27,15 +27,15 @@ const TodoItem = (text, date) => {
 }
 
 addElement.addEventListener('click', () => {
-    const nowDate = today();
-    if (inputValue.value === '') {
+    const nowDate = getCurrentDate();
+    if (!inputValue.value) {
         alert('Enter your task!');
     } else {
         todos.push(TodoItem(inputValue.value, nowDate));
-        setToStorage();
+        setToStorage(todos);
         renderTodoList();
         inputValue.value = '';
-        datePick.value = nowDate;
+        dateForSort.value = nowDate;
     }
 })
 
@@ -48,12 +48,12 @@ const completeTodo = i => {
     } else {
         todoItems[i].classList.remove('checked');
     }
-    setToStorage();
+    setToStorage(todos);
 }
 
 const deleteTodo = i => {
     todos.splice(i, 1);
-    setToStorage();
+    setToStorage(todos);
     renderTodoList();
 }
 
@@ -61,11 +61,11 @@ const editText = (e) => {
     const inputId = e.target.id;
     const value = e.target.value;
     todos[inputId].text = value;
-    setToStorage();
+    setToStorage(todos);
 }
 
 const sortDate = () => {
-    const sortedTodo = todos.filter(todo => datePick.value === todo.date);
+    const sortedTodo = todos.filter(todo => dateForSort.value === todo.date);
     renderTodoList(sortedTodo);
 }
 

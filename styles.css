@@ -1,3 +1,13 @@
+body {
+    width: 60%;
+}
+
+* {
+    text-transform: capitalize;
+    font-family: Montserrat;
+    font-size: 31px;
+}
+
 .todo_item {
     display: flex;
     flex-direction: row;
@@ -5,10 +15,6 @@
     align-items: center;
     margin-bottom: 5%;
     border: 2px solid #9c9c9c;
-}
-
-body {
-    width: 60%;
 }
 
 .todo_list {
@@ -19,12 +25,6 @@ body {
 
 .checked {
     opacity: 0.3;
-}
-
-* {
-    text-transform: capitalize;
-    font-family: Montserrat;
-    font-size: 31px;
 }
 
 .date {
@@ -54,7 +54,7 @@ label {
 .btn_save,
 .date_picker,
 .btn_delete {
-    padding: 15px 20px 15px 20px;
+    padding: 15px 20px;
     border: none;
     background-color: #b0b0b0;
     font-weight: bold;

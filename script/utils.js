@@ -1,13 +1,12 @@
-const today = () => {
+const getCurrentDate = () => {
     const day = new Date();
     const currentDay = day.getDate();
     const currentMonth = '0' + (day.getMonth() + 1);
     const currentYear = day.getFullYear();
-
-    return `${currentYear}-${currentMonth}-${currentDay}`;
+    return `${currentYear}-${currentMonth}-${currentDay > 9 ? currentDay : '0' + currentDay}`;
 }
 
-const setToStorage = () => localStorage.setItem('todos', JSON.stringify(todos));
+const setToStorage = (cash) => localStorage.setItem('todos', JSON.stringify(cash));
 
 const createTodoItem = (todo, i) => {
     return `
